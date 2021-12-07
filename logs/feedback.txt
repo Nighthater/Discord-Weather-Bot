@@ -1,0 +1,4 @@
+Time:  YYYY-MM-DD HH:MM:SS.SSSSSS
+Content:  [Content of command]
+User:  [USER@1234]
+
