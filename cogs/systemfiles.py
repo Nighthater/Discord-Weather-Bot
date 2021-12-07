@@ -11,7 +11,11 @@ import requests
 import json
 import platform
 
-#appids
+if not os.path.isfile("settings.json"):
+    sys.exit("'settings.json' not found!")
+else:
+    with open("settings.json") as file:
+        settings = json.load(file)
 
 class System(commands.Cog):
     def __init__(self, bot):

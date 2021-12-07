@@ -1,5 +1,6 @@
 {
-  "prefix": "YOUR_BOT_PREFIX_HERE",
+  "prefix": "YOUR_PREFIX_HERE",
   "token": "YOUR_BOT_TOKEN_HERE",
+  "API-token":"YOUR_OPENWEATHERMAPS_API_TOKEN_HERE",
   ]
 }
