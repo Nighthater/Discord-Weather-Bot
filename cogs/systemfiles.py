@@ -68,8 +68,8 @@ class System(commands.Cog):
         
 
         embed = discord.Embed(title="About the Bot", description="", color=0x1C9FF6)
-        embed.add_field(name="GitHub", value="link",inline=True)
-        embed.add_field(name="Bot Version", value="1.0",inline=True)
+        embed.add_field(name="GitHub", value="https://github.com/Nighthater/Discord-Weather-Bot",inline=True)
+        embed.add_field(name="Bot Version", value="1.0",inline=False)
         embed.add_field(name="Python version", value=platform.python_version(),inline=True)
         embed.add_field(name="Weather Data", value="OpenWeather API \nhttps://openweathermap.org",inline=True)
         embed.add_field(name="Current Server Time", value=datetime.datetime.now(),inline=False)
