@@ -24,13 +24,13 @@ class Rain(commands.Cog):
     @commands.command(brief='rain', description='gives information about incoming rain')
     async def rain(self,ctx):   
           
-        if ctx.message.content == "!rain":
-            embed = discord.Embed(title="Error", description="!rain requires a location \n!rain <Location/City/Town>", color=0xFF0000)
+        if ctx.message.content == settings["prefix"]+"rain":
+            embed = discord.Embed(title="Error", description=settings["prefix"]+"rain requires a location \n!rain <Location/City/Town>", color=0xFF0000)
             await ctx.send(content=None, embed=embed)
             return
         
         #Obtaining lat and lon from location specified
-        city = str(ctx.message.content).replace("!rain ","").capitalize()
+        city = str(ctx.message.content).replace(settings["prefix"]+"rain ","").capitalize()
         try:
             response = requests.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+settings["API-token"])
         except:

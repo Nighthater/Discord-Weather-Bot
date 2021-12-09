@@ -23,12 +23,12 @@ class Forecast(commands.Cog):
 
     @commands.command(brief='weatherreport', description='detail')
     async def forecast(self,ctx):
-        if ctx.message.content == "!forecast":
-            embed = discord.Embed(title="Error", description="!forecast requires a location \n!forecast <Location/City/Town>", color=0xFF0000)
+        if ctx.message.content == settings["prefix"]+"forecast":
+            embed = discord.Embed(title="Error", description=settings["prefix"]+"forecast requires a location \n!forecast <Location/City/Town>", color=0xFF0000)
             await ctx.send(content=None, embed=embed)
             return
         
-        city = str(ctx.message.content).replace("!forecast ","").capitalize()
+        city = str(ctx.message.content).replace(settings["prefix"]+"forecast ","").capitalize()
         try:
             response = requests.get("https://api.openweathermap.org/data/2.5/forecast?q="+city+"&appid="+settings["API-token"])
         except:

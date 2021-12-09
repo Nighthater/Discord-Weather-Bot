@@ -74,13 +74,14 @@ class System(commands.Cog):
         embed.add_field(name="Weather Data", value="OpenWeather API \nhttps://openweathermap.org",inline=True)
         embed.add_field(name="Current Server Time", value=datetime.datetime.now(),inline=False)
         embed.add_field(name="Host Server Uptime", value=uptime,inline=True)
+        embed.add_field(name="Prefix", value=settings["prefix"],inline=True)
         await ctx.send(content=None, embed=embed)
 
     #Outputs User feedback into a file
-    @commands.command(brief='Send feedback', description='Usage: -feedback <Your message here>')
+    @commands.command(brief='Send feedback', description='Usage: '+settings["prefix"]+'feedback <Your message here>')
     async def feedback(self,ctx):
-        if ctx.message.content == "!feedback":
-            embed = discord.Embed(title="Error", description="!feedback requires a message \n!feedback <Your Message here>", color=0xFF0000)
+        if ctx.message.content == settings["prefix"] + "feedback":
+            embed = discord.Embed(title="Error", description=settings["prefix"]+"feedback requires a message \n"+settings["prefix"]+"feedback <Your Message here>", color=0xFF0000)
             await ctx.send(content=None, embed=embed)
             return
         print("Time: ", datetime.datetime.now(), file=open("logs/feedback.txt", "a"))
@@ -93,12 +94,12 @@ class System(commands.Cog):
     async def help(self,ctx):
         embed = discord.Embed(title="Help", description="All Commands are listed here.", color=0x1C9FF6)
         embed.add_field(name='\u200b', value="Weather", inline=False)
-        embed.add_field(name="!weather [City or Location]", value="Lets you see the current weather on the location you specified", inline=False)
-        embed.add_field(name="!forecast [City or Location]", value="Lets you see the weather forecast for the next 24 hours on the location you specified", inline=False)
-        embed.add_field(name="!rain [City or Location]", value="Gives you a quick status message about incoming rain", inline=False)
-        embed.add_field(name="!air [City or Location]", value="Returns a list of the current Gases and Particle concentrations in the air", inline=False)
-        embed.add_field(name="!about", value="Info about the Bot", inline=False)
-        embed.add_field(name="!feedback [Your message]", value="Send Feedback, Questions or anything else regarding the bot", inline=False)
+        embed.add_field(name=settings["prefix"]+"weather [City or Location]", value="Lets you see the current weather on the location you specified", inline=False)
+        embed.add_field(name=settings["prefix"]+"forecast [City or Location]", value="Lets you see the weather forecast for the next 24 hours on the location you specified", inline=False)
+        embed.add_field(name=settings["prefix"]+"rain [City or Location]", value="Gives you a quick status message about incoming rain", inline=False)
+        embed.add_field(name=settings["prefix"]+"air [City or Location]", value="Returns a list of the current Gases and Particle concentrations in the air", inline=False)
+        embed.add_field(name=settings["prefix"]+"about", value="Info about the Bot", inline=False)
+        embed.add_field(name=settings["prefix"]+"feedback [Your message]", value="Send Feedback, Questions or anything else regarding the bot", inline=False)
         
         #Footer
         

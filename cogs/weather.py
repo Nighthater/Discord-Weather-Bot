@@ -23,11 +23,11 @@ class Weather(commands.Cog):
 
     @commands.command(brief='Weatherreport', description='Gives a Weather report of the current situation of a location')
     async def weather(self,ctx):
-        if ctx.message.content == "!weather":
-            embed = discord.Embed(title="Error", description="!weather requires a location \n!weather <Location/City/Town>", color=0xFF0000)
+        if ctx.message.content == settings["prefix"]+"weather":
+            embed = discord.Embed(title="Error", description=settings["prefix"]+"weather requires a location \n"+settings["prefix"]+"weather <Location/City/Town>", color=0xFF0000)
             await ctx.send(content=None, embed=embed)
             return
-        city = str(ctx.message.content).replace("!weather ","").capitalize()
+        city = str(ctx.message.content).replace(settings["prefix"]+"weather ","").capitalize()
         
         try:
             response = requests.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+settings["API-token"])

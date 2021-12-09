@@ -25,13 +25,13 @@ class Air(commands.Cog):
 	#Hi
     @commands.command(brief='Outputs Air Quality information', description='')
     async def air(self,ctx):
-        if ctx.message.content == "!air":
-            embed = discord.Embed(title="Error", description="!air requires a location \n!air <Location/City/Town>", color=0xFF0000)
+        if ctx.message.content == settings["prefix"]+"air":
+            embed = discord.Embed(title="Error", description=settings["prefix"]+"air requires a location \n!air <Location/City/Town>", color=0xFF0000)
             await ctx.send(content=None, embed=embed)
             return
         
         #Obtaining lat and lon from location specified
-        city = str(ctx.message.content).replace("!air ","").capitalize()
+        city = str(ctx.message.content).replace(settings["prefix"]+"air ","").capitalize()
         try:
             response = requests.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+settings["API-token"])
         except:
