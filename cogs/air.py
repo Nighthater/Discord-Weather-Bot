@@ -9,6 +9,7 @@ import re
 import random
 import requests
 import json
+import os
 
 if not os.path.isfile("settings.json"):
     sys.exit("'settings.json' not found!")
@@ -32,7 +33,7 @@ class Air(commands.Cog):
         #Obtaining lat and lon from location specified
         city = str(ctx.message.content).replace("!air ","").capitalize()
         try:
-            response = requests.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+settings[API-token])
+            response = requests.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+settings["API-token"])
         except:
             embed = discord.Embed(title="Error: 400", description="An External Error has occured!", color=0xFF0000)
             await ctx.send(content=None, embed=embed)
@@ -42,7 +43,7 @@ class Air(commands.Cog):
         lon = str(jsondata['coord']['lon']) #Lat lon obtained!
         
         try:
-            response = requests.get("http://api.openweathermap.org/data/2.5/air_pollution?lat="+lat+"&lon="+lon+"&appid="+settings[API-token])
+            response = requests.get("http://api.openweathermap.org/data/2.5/air_pollution?lat="+lat+"&lon="+lon+"&appid="+settings["API-token"])
         except:
             embed = discord.Embed(title="Error: 400", description="An External Error has occured!", color=0xFF0000)
             await ctx.send(content=None, embed=embed)

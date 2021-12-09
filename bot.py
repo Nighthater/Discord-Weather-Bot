@@ -5,14 +5,16 @@ import subprocess
 import asyncio
 import os
 import sys
+import json
 
 if not os.path.isfile("settings.json"):
     sys.exit("'settings.json' not found!")
 else:
     with open("settings.json") as file:
         settings = json.load(file)
+        print(settings)
 
-bot = commands.Bot(command_prefix=settings[prefix])
+bot = commands.Bot(command_prefix=settings["prefix"])
 bot.remove_command('help')
 
 if __name__ == "__main__":
@@ -29,10 +31,10 @@ if __name__ == "__main__":
 @bot.event
 async def on_ready():
     print("WeatherBot is online!, Beep Boop")
-    activity = discord.Activity(name="I can tell you the weather, " + settings[prefix] + "help for info!", type=discord.ActivityType.playing)
+    activity = discord.Activity(name="I can tell you the weather, " + settings["prefix"] + "help for info!", type=discord.ActivityType.playing)
     await bot.change_presence(activity=activity)
 
-bot.run(settings[token])
+bot.run(settings["token"])
 
 
 

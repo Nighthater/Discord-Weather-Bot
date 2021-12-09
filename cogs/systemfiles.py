@@ -10,6 +10,7 @@ import random
 import requests
 import json
 import platform
+import os
 
 if not os.path.isfile("settings.json"):
     sys.exit("'settings.json' not found!")
