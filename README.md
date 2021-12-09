@@ -37,4 +37,4 @@ Uses discord.py as a framework and openweathermap.com API for free live weather 
 
 Now you have finished setting up your bot.\
 Run bot.py with `python3 bot.py` from the directory.
-After a few seconds the bot should come online on your Server
+After a few seconds the bot should come online on your Server.
