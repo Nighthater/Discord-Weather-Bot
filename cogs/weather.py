@@ -31,9 +31,6 @@ class Weather(commands.Cog):
         
         try:
             response = requests.get("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+settings["API-token"])
-            print("https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+settings["API-token"])
-            print(response)
-            print(settings["API-token"])
         except:
             embed = discord.Embed(title="Error: 400", description="An External Error has occured!", color=0xFF0000)
             await ctx.send(content=None, embed=embed)
