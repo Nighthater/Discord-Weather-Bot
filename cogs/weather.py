@@ -84,7 +84,7 @@ class Weather(commands.Cog):
         status_tmp = status_tmp_list[index_tmp]
         status_hum = status_hum_list[index_hum]
         
-        temp_string_list = ['. The temperature is ', '. It is ', '. Today it feels ', '. Outside it is ', " Currently, it is "]
+        temp_string_list = ['The temperature is ', 'It is ', 'Today it feels ', 'Outside it is ', "Currently, it is "]
         temp_string = random.choice(temp_string_list)
         
         hum_string_list = [', and it feels ', ', the air feels ', ', the atmosphere is ']
