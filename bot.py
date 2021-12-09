@@ -12,7 +12,10 @@ if not os.path.isfile("settings.json"):
 else:
     with open("settings.json") as file:
         settings = json.load(file)
-        print(settings)
+        print('\n' * 150)
+        print("Prefix: " + settings["prefix"])
+        print("Discord Bot API Token: " + settings["token"])
+        print("openweathermap API Token: "+ settings["API-token"])
 
 bot = commands.Bot(command_prefix=settings["prefix"])
 bot.remove_command('help')
@@ -30,6 +33,7 @@ if __name__ == "__main__":
 
 @bot.event
 async def on_ready():
+    print('\n')
     print("WeatherBot is online!, Beep Boop")
     activity = discord.Activity(name="I can tell you the weather, " + settings["prefix"] + "help for info!", type=discord.ActivityType.playing)
     await bot.change_presence(activity=activity)
