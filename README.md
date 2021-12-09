@@ -1,8 +1,34 @@
 # Discord-Weather-Bot
-Simple Discord Bot you can edit and host yourself. Uses discord.py as a framework and openweathermap.com API for free live weather data.
 
-Steps to use the bot yourself:
+A simple Discord Bot you can edit and host yourself.
+Uses discord.py as a framework and openweathermap.com API for free live weather data.
+
+
+## Requirements:
+- `Python 3.5.3` and up - https://www.python.org/downloads/
+- `discord.py` - Using `pip install discord.py` will install the latest version. Read the Docs [here](https://discordpy.readthedocs.io/en/latest/).
+- The Python code for the Bot itself - Download the latest [release](https://github.com/Nighthater/Discord-Weather-Bot/releases)
+
+
+## Steps to use the bot yourself
+
+### Configure `settings.json`
+
+#### Get the API tokens:
 - Create discord Bot token: https://discord.com/developers/applications
 - Register on openweathermap.com and get an API token: https://home.openweathermap.org/users/sign_up
-- Install discord.py: https://discordpy.readthedocs.io/en/stable/intro.html
 
+#### Replace `YOUR_PREFIX_HERE` with the Prefix you want to use the bot
+- Common Prefixes are `_` `!` `?` `.`
+- Use a prefix no other bot on your server uses
+#### Replace `YOUR_BOT_TOKEN_HERE` with your personal Discord Bot token
+#### Replace `YOUR_OPENWEATHERMAP_API_TOKEN_HERE` with your personal API token from openweathermap.org
+
+## Invite the bot to your server
+
+lorem ipsum
+
+## Finish
+
+Now you have finished setting up your bot.\
+run bot.py with `python3 bot.py`
