@@ -10,10 +10,10 @@ Uses discord.py as a framework and openweathermap.com API for free live weather 
 |-------|-------|-----------|
 |`help`| !help | Lists all avalible commands, and a small explanation on how to use them|
 |`about`| !about |Displays a few informations about the bot e.g.: the Python version running|
-|`weather [City/Location]`| !weather London |Shows current temperature, humidity, pressure, windspeed, <br />percieved temperature, as well as cloud coverage and precipitation.|
-|`forecast [City/Location]`| !forecast New york | Gives out the temperature and a litte description with an Emoji for <br />the next 24h in 3 hour intervals. |
+|`weather [City/Location]`| !weather London |Shows current temperature, humidity, pressure, windspeed, percieved temperature, as well as cloud coverage and precipitation.|
+|`forecast [City/Location]`| !forecast New york | Gives out the temperature and a litte description with an Emoji for the next 24h in 3 hour intervals. |
 |`rain [City/Location]`| !rain Paris | Quick feedback if its about to rain in the next hour, and if yes how much. |
-|`air [City/Location]`| !air Tokyo | Gives out a small rating of Air quality and then a listing of<br /> individual concentrations of gases and particles. |
+|`air [City/Location]`| !air Tokyo | Gives out a small rating of Air quality and then a listing of individual concentrations of gases and particles. |
 
 ## Requirements:
 - `Python 3.5.3` and up - https://www.python.org/downloads/
